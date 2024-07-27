@@ -14,7 +14,7 @@ a {
 }
 
 a:hover {
-    color: #ff0000; /* Hover color */
+    color: #b71c1c; /* Hover color with sufficient contrast */
 }
 
 /* Header Styles */
@@ -41,7 +41,7 @@ header .logo {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    color:red;
+    color: #d32f2f; /* More accessible red */
 }
 
 header h3 {
@@ -56,116 +56,150 @@ header p {
     color: #333;
 }
 
-/* Main Styles */
-main {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Image Section Styles */
+.image-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Distribute space evenly between images */
+    align-items: center; /* Center images vertically */
+    flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
+    gap: 10px; /* Adjust spacing between images */
+    padding: 10px; /* Optional: Add padding to the section */
+    box-sizing: border-box; /* Ensure padding and border are included in the total width/height */
+}
+  
+.square-image {
+    flex: 1; /* Allow images to grow and shrink to fill space */
+    max-width: calc(25% - 20px); /* Calculate width based on number of images and gap */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the image container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
 }
 
-section h2 {
-    color: #ff0000; /* Primary color */
+/* Main Content Styles */
+main {
+    padding: 2rem;
+}
+
+/* Services Section Styles */
+#services {
+    border: 2px solid black;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: #fff; /* Optional: Adds a background color to the services section */
+    border-radius: 5px; /* Optional: Adds rounded corners to the border */
+}
+
+#services h2 {
+    font-size: 2rem;
+    color: #d32f2f;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
 
-ul {
-    list-style: none;
+#services ul {
+    list-style-type: none;
     padding: 0;
 }
 
-ul li {
-    background: #fff;
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#services ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid black; /* Adds a bottom border to each list item */
+}
+
+#services ul li:last-child {
+    border-bottom: none; /* Removes the bottom border from the last list item */
+}
+
+#services ul li a {
     color: #333;
 }
 
-/* Form Styles */
-form {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#services ul li a:hover {
+    color: #b71c1c;
 }
 
-form label {
-    font-weight: bold;
-    display: block;
-    margin-top: 1rem;
+/* Contact Section Styles */
+#contact h2 {
+    font-size: 2rem;
+    color: #d32f2f;
 }
 
-form input,
-form textarea {
-    width: 100%;
+#contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label {
+    margin: 0.5rem 0 0.2rem 0;
+}
+
+#contact input, #contact textarea {
     padding: 0.5rem;
-    margin: 0.5rem 0;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background: #f9f9f9;
-    color: #333;
 }
 
-form input[type="submit"] {
-    background: #ff0000; /* Primary color */
+#contact input[type="submit"] {
+    background-color: #d32f2f;
     color: #fff;
     border: none;
-    padding: 0.75rem;
     cursor: pointer;
-    margin-top: 1rem;
-    font-size: 1rem;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-form input[type="submit"]:hover {
-    background: #e60000; /* Hover color */
+#contact input[type="submit"]:hover {
+    background-color: #b71c1c;
 }
 
 /* Footer Styles */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
     text-align: center;
     padding: 1rem 0;
-    position: bottom;
-    width: 100%;
-    bottom: 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.875rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer .social-media {
-    margin-top: 0.5rem;
-}
-
-footer .social-media a {
-    margin: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 footer .social-media img {
     width: 24px;
     height: 24px;
-    vertical-align: middle;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .logo {
+        width: 100px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
     main {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     ul li {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 0.5rem;
     }
 
-    ul li img {
-        margin: 0.5rem 0 0;
+    .square-image {
+        max-width: calc(50% - 20px); /* Adjust max-width for smaller screens */
     }
 }
