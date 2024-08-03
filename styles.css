@@ -1,4 +1,6 @@
-/* General Styles */
+/* ========================= */
+/* General Styles            */
+/* ========================= */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -11,18 +13,21 @@ body {
 a {
     text-decoration: none;
     color: #333;
+    transition: color 0.3s; /* Smooth transition for links */
 }
 
 a:hover {
     color: #b71c1c; /* Hover color with sufficient contrast */
 }
 
-/* Header Styles */
+/* ========================= */
+/* Header Styles            */
+/* ========================= */
 header {
     background-color: #fff;
     color: #333;
     padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
     text-align: center;
 }
 
@@ -42,6 +47,7 @@ header h1 {
     margin: 0;
     font-size: 2.5rem;
     color: #d32f2f; /* More accessible red */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 header h3 {
@@ -56,38 +62,55 @@ header p {
     color: #333;
 }
 
-/* Image Section Styles */
+/* ========================= */
+/* Image Section Styles      */
+/* ========================= */
 .image-section {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Distribute space evenly between images */
-    align-items: center; /* Center images vertically */
-    flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
-    gap: 10px; /* Adjust spacing between images */
-    padding: 10px; /* Optional: Add padding to the section */
-    box-sizing: border-box; /* Ensure padding and border are included in the total width/height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Increased spacing for better visuals */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .square-image {
-    flex: 1; /* Allow images to grow and shrink to fill space */
-    max-width: calc(25% - 20px); /* Calculate width based on number of images and gap */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the image container */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow effect */
+    flex: 1;
+    max-width: calc(25% - 20px);
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Deeper shadow for images */
+    transition: transform 0.3s; /* Smooth scale effect */
 }
 
-/* Main Content Styles */
+.square-image:hover {
+    transform: scale(1.05); /* Slightly enlarge images on hover */
+}
+
+/* ========================= */
+/* Main Content Styles       */
+/* ========================= */
 main {
     padding: 2rem;
 }
 
-/* Services Section Styles */
+/* ========================= */
+/* Services Section Styles   */
+/* ========================= */
 #services {
     border: 2px solid black;
     padding: 1rem;
     margin-bottom: 2rem;
-    background-color: #fff; /* Optional: Adds a background color to the services section */
-    border-radius: 5px; /* Optional: Adds rounded corners to the border */
+    background-color: #fff; /* Adds a background color to the services section */
+    border-radius: 5px;
 }
+#services-title {
+    background-color: #f4f4f9; /* Replace with your desired color */
+    padding: 5px; /* Optional: add padding for better appearance */
+    border-radius: 5px; /* Optional: round the corners */
+}
+
 
 #services h2 {
     font-size: 2rem;
@@ -95,6 +118,7 @@ main {
     border-bottom: 2px solid black;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
 }
 
 #services ul {
@@ -113,16 +137,20 @@ main {
 
 #services ul li a {
     color: #333;
+    transition: color 0.3s; /* Smooth transition for links */
 }
 
 #services ul li a:hover {
-    color: #b71c1c;
+    color: #b71c1c; /* Same hover color for consistency */
 }
 
-/* Contact Section Styles */
+/* ========================= */
+/* Contact Section Styles     */
+/* ========================= */
 #contact h2 {
     font-size: 2rem;
     color: #d32f2f;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Subtle shadow for heading */
 }
 
 #contact form {
@@ -140,6 +168,13 @@ main {
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s; /* Smooth transition for border */
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #d32f2f; /* Change border color on focus */
+    outline: none; /* Remove default outline */
 }
 
 #contact input[type='submit'] {
@@ -154,13 +189,15 @@ main {
     background-color: #b71c1c;
 }
 
-/* Footer Styles */
+/* ========================= */
+/* Footer Styles             */
+/* ========================= */
 footer {
     background-color: #fff;
     color: #333;
     text-align: center;
     padding: 1rem 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
 }
 
 footer .social-media {
@@ -174,13 +211,13 @@ footer .social-media {
 footer .social-media img {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Make the images round */
-    transition: transform 0.3s, box-shadow 0.3s; /* Add smooth transitions for hover effects */
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 footer .social-media img:hover {
-    transform: scale(1.1); /* Slightly enlarge the icons on hover */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect on hover */
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 footer p {
@@ -189,7 +226,38 @@ footer p {
     color: #666;
 }
 
-/* Mobile Responsiveness */
+/* ========================= */
+/* Related Links Styles      */
+/* ========================= */
+#related-links {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+#related-links h2 {
+    font-size: 2rem;
+    color: #d32f2f;
+    margin-bottom: 1rem;
+}
+
+#related-links p {
+    margin: 0.5rem 0;
+}
+
+#related-links a {
+    color: #007BFF; /* Link color */
+    transition: color 0.3s; /* Smooth transition for links */
+}
+
+#related-links a:hover {
+    color: #0056b3; /* Hover color */
+}
+
+/* ========================= */
+/* Mobile Responsiveness      */
+/* ========================= */
 @media (max-width: 480px) {
     .logo {
         width: 100px;
@@ -208,12 +276,16 @@ footer p {
     }
 
     .square-image {
-        max-width: calc(50% - 20px); /* Adjust max-width for smaller screens */
+        max-width: calc(50% - 20px);
     }
 }
+
+/* ========================= */
+/* Home Button               */
+/* ========================= */
 .home-button {
     display: inline-block;
-    background-color: #007BFF; /* Change to your preferred color */
+    background-color: #007BFF;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -222,8 +294,105 @@ footer p {
     font-weight: bold;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-  }
-  
-  .home-button:hover {
-    background-color: #0056b3; /* Change to your preferred hover color */
-  }
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+/* ========================= */
+/* Gradient Border           */
+/* ========================= */
+.gradient-border {
+    background: linear-gradient(#cccccc, #eaf8fd) padding-box,
+    linear-gradient(0deg, #d2dfe9 0%, #333 100%) border-box; /* Muted colors for a professional look */
+    border: solid 1px transparent;
+}
+
+/* ========================= */
+/* Gradient Heading          */
+/* ========================= */
+.gradient-heading { 
+    background: linear-gradient(45deg, #555 0%, #777 100%); /* Subdued gradient */
+    -webkit-background-clip: text;
+    color: transparent;  /* Makes text transparent to show the gradient */
+}
+
+/* ========================= */
+/* Polite Card              */
+/* ========================= */
+.polite-card {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    background: #333; /* Dark background for contrast */
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1rem;
+    color: white;  /* Ensures text inside the card is readable */
+}
+
+/* ========================= */
+/* CSS Card                 */
+/* ========================= */
+.css-card {
+    padding: 20px;
+}
+
+/* ========================= */
+/* Element Hover Effect      */
+/* ========================= */
+.element:hover {
+    transform: scale(1.05);
+    color: #e71515;  /* Changes text color on hover to a more muted shade */
+}
+
+/* ========================= */
+/* H1 Styling               */
+/* ========================= */
+h1 {
+    color: #d32f2f; /* More subtle color for headings */
+    -webkit-text-stroke-color: #ccc;
+    -webkit-text-stroke-width: 1px;
+}
+
+h1:hover {
+    color: #b71c1c; /* Subtle hover color */
+}
+
+/* ========================= */
+/* Blog Section Styles       */
+/* ========================= */
+#blog {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+#blog h2 {
+    font-size: 2rem;
+    color: #d32f2f;
+    margin-bottom: 1rem;
+}
+
+#blog article {
+    margin-bottom: 1rem;
+}
+
+/* ========================= */
+/* FAQ Section Styles        */
+/* ========================= */
+#faq {
+    margin-bottom: 2rem;
+}
+
+#faq h2 {
+    font-size: 2rem;
+    color: #d32f2f;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
