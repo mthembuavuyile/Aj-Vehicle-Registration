@@ -346,6 +346,9 @@ footer p {
     transform: scale(1.05);
     color: #e71515;  /* Changes text color on hover to a more muted shade */
 }
+h3{
+    color:blue;
+}
 
 /* ========================= */
 /* H1 Styling               */
@@ -358,41 +361,4 @@ h1 {
 
 h1:hover {
     color: #b71c1c; /* Subtle hover color */
-}
-
-/* ========================= */
-/* Blog Section Styles       */
-/* ========================= */
-#blog {
-    margin-bottom: 2rem;
-    padding-left: 1rem;
-}
-
-#blog h2 {
-    font-size: 2rem;
-    color: #d32f2f;
-    margin-bottom: 1rem;
-}
-
-#blog article {
-    margin-bottom: 1rem;
-}
-
-/* ========================= */
-/* FAQ Section Styles        */
-/* ========================= */
-#faq {
-    margin-bottom: 2rem;
-}
-
-#faq h2 {
-    font-size: 2rem;
-    color: #d32f2f;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-}
-
-.faq-item {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
 }
