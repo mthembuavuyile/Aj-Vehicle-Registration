@@ -9,66 +9,73 @@
     <meta name="author" content="AJ Vehicle Registration Services" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <meta name="robots" content="index, follow" />
   </head>
   <body>
     <header>
       <div class="logo-container">
         <img src="images/Aj_logo.png" alt="AJ Vehicle Registration Services Logo" class="logo" />
-        <h2><a href="index.html" class="home-button">Back to Home</a></h2>
-        <h1>Service Details</h1>
+        <h1>AJ Vehicle Registration Services</h1>
+        <h3>Reliable Auto Support</h3>
       </div>
+      <p>Based in Durban, KZN, South Africa</p>
+      <a href="index.html" class="home-button">Home Page</a>
+
     </header>
     <main>
-      <section id="service-details">
-        <h2>Renewal of Vehicle Licence</h2>
-        <p>Renew your vehicle license easily with our streamlined process. Required documents include your ID, proof of residence, and current license disc.</p>
+      <section class="service-details">
+        <h2 id="renewal">Renewal of vehicle license</h2>
+        <p>Our team provides a seamless process for renewing your vehicle license.</p>
 
-        <h2>Deregistration</h2>
-        <p>Deregister your vehicle if it's no longer in use. Required documents include your ID, proof of residence, and current license disc.</p>
+        <h2 id="deregistration">Deregistration</h2>
+        <p>Need to deregister your vehicle? We handle all the paperwork and ensure it’s done correctly.</p>
 
-        <h2>Change of Address</h2>
-        <p>Update your vehicle registration details with your new address. Required documents include your ID, proof of new residence, and current license disc.</p>
+        <h2 id="change-address">Change of Address</h2>
+        <p>Update your address in your vehicle records without any hassle.</p>
 
-        <h2>Duplicate Logbook</h2>
-        <p>Request a duplicate logbook if yours has been lost or damaged. Required documents include your ID and proof of ownership.</p>
+        <h2 id="duplicate-logbook">Duplicate Logbook</h2>
+        <p>Lost your logbook? We’ll help you get a duplicate quickly.</p>
 
-        <h2>Change of Ownership</h2>
-        <p>Transfer ownership of your vehicle. Required documents include your ID, proof of sale, and current license disc.</p>
+        <h2 id="change-ownership">Change of Ownership</h2>
+        <p>Transferring ownership of a vehicle? We make the process smooth and straightforward.</p>
 
-        <h2>Vehicle Registration</h2>
-        <p>Register your vehicle with the necessary documentation including your ID, proof of residence, and purchase invoice.</p>
+        <h2 id="vehicle-registration">Vehicle Registration</h2>
+        <p>Register your new vehicle with ease through our comprehensive service.</p>
 
-        <h2>Application for Learners</h2>
-        <p>Apply for a learner's license. Required documents include your ID, proof of residence, and completed application form.</p>
+        <h2 id="learners">Application for Learners</h2>
+        <p>Apply for a learner's license with our expert guidance.</p>
 
-        <h2>Renewals of Driver's Licence</h2>
-        <p>Renew your driver's license. Required documents include your ID, proof of residence, and current driver's license.</p>
+        <h2 id="drivers-license-renewal">Renewals of Driver's License</h2>
+        <p>We assist with the renewal of your driver’s license efficiently.</p>
 
-        <h2>Application for Double Discs</h2>
-        <p>Apply for double license discs if you have multiple vehicles. Required documents include your ID and proof of ownership for each vehicle.</p>
+        <h2 id="double-discs">Application for Double Discs</h2>
+        <p>Need double discs for your vehicle? We handle the application for you.</p>
 
-        <h2>Application for Driver's Licence</h2>
-        <p>Apply for a new driver's license. Required documents include your ID, proof of residence, and completed application form.</p>
+        <h2 id="drivers-license">Application for Driver's License</h2>
+        <p>Start your journey to obtaining a driver’s license with our help.</p>
 
-        <h2>Application for Police Clearance</h2>
-        <p>Obtain police clearance for your vehicle. Required documents include your ID and proof of residence.</p>
+        <h2 id="police-clearance">Application for Police Clearance</h2>
+        <p>We facilitate the application process for police clearance certificates.</p>
 
-        <h2>Application for Temporary Permits</h2>
-        <p>Apply for temporary permits for vehicle use. Required documents include your ID, proof of residence, and reason for the permit.</p>
+        <h2 id="temporary-permits">Application for Temporary Permits</h2>
+        <p>Need a temporary permit? We can assist with the application.</p>
 
-        <h2>Certificate of Roadworthiness (COR/COF)</h2>
-        <p>Obtain a certificate of roadworthiness for your vehicle. Required documents include your ID, proof of residence, and vehicle inspection report.</p>
+        <h2 id="roadworthiness">Certificate of Roadworthiness (COR/COF)</h2>
+        <p>Ensure your vehicle meets all roadworthiness standards with our help.</p>
       </section>
-      <a href="index.html" class="home-button">Back to Home</a>
     </main>
     <footer>
-      <p>&copy; 2024 AJ Vehicle Registration Services</p>
+      <p>&copy; <span id="year-details"></span> AJ Vehicle Registration Services</p>
       <div class="social-media">
         <a href="https://www.instagram.com/mthembu_avuyile_sa/" target="_blank"><img src="images/facebook_ic.png" alt="Facebook" /></a>
-        <a href="#"><img src="images/twitter_icon.png" alt="Twitter" /></a>
-        <a href="#"><img src="images/linkedin_icon.png" alt="LinkedIn" /></a>
+        <a href="https://twitter.com/MthembuAvuyile"><img src="images/twitter_icon.png" alt="Twitter" /></a>
+        <a href="https://www.linkedin.com/in/mthembuavuyile/"><img src="images/linkedin_icon.png" alt="LinkedIn" /></a>
       </div>
-      <p>By Avuyile Mthembyu</p>
+      <p>By Avuyile Mthembu <br> Mr A CEO</p>
     </footer>
+    <script>
+      const yearDetails = new Date().getFullYear();
+      document.getElementById('year-details').textContent = yearDetails;
+    </script>
   </body>
 </html>
