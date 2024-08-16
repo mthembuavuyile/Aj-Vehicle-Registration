@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      AJ Vehicle Registration Services - Durban, KZN | Ownership Changes,
-      Logbook Duplicates, Deregistration
-    </title>
-    <meta
-      name="description"
-      content="AJ Vehicle Registration Services in Durban, KZN offers comprehensive vehicle registration services including ownership changes, logbook duplicates, deregistration, renewals, and more."
-    />
-    <meta
-      name="keywords"
-      content="vehicle registration, Durban, Avuyile Mthembu, KZN, ownership change, logbook duplicate, deregistration, roadworthiness, driver's license"
-    />
-    <meta name="author" content="AJ Vehicle Registration Services" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="images/AJ-logo.jpg" />
-    <meta name="robots" content="index, follow" />
-    <link rel="stylesheet" href="styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "AJ Vehicle Registration Services",
-        "image": "https://mthembuavuyile.github.io/Aj-Vehicle-Registration/images/Aj_logo.png",
-        "@id": "https://mthembuavuyile.github.io/Aj-Vehicle-Registration/index.html",
-        "url": "https://mthembuavuyile.github.io/Aj-Vehicle-Registration/index.html",
-        "telephone": "+27714283735",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "331 Anton Lembede St",
-          "addressLocality": "Durban",
-          "addressRegion": "KZN",
-          "postalCode": "4001",
-          "addressCountry": "ZA"
-        },
-        "sameAs": [
-          "https://www.facebook.com/yourprofile",
-          "https://twitter.com/MthembuAvuyile",
-          "https://www.linkedin.com/in/yourprofile"
-        ]
-      }
-    </script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ Vehicle Registration Services - Durban, KZN | Ownership Changes, Logbook Duplicates, Deregistration</title>
+  <meta name="description" content="AJ Vehicle Registration Services in Durban, KZN offers comprehensive vehicle registration services including ownership changes, logbook duplicates, deregistration, renewals, and more." />
+  <meta name="keywords" content="vehicle registration, Durban, KZN, ownership change, logbook duplicate, deregistration, roadworthiness, driver's license" />
+  <meta name="author" content="AJ Vehicle Registration Services" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("sjem_DYuQ5tWYRZlu"); // Initialize EmailJS with your public key
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" href="images/AJ-logo.jpg" />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AJ Vehicle Registration Services",
+    "image": "https://mthembuavuyile.github.io/Aj-Vehicle-Registration/images/Aj_logo.png",
+    "@id": "https://mthembuavuyile.github.io/Aj-Vehicle-Registration/index.html",
+    "url": "https://mthembuavuyile.github.io/Aj-Vehicle-Registration/index.html",
+    "telephone": "+27714283735",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Anton Lembede St",
+      "addressLocality": "Durban",
+      "addressRegion": "KZN",
+      "postalCode": "4001",
+      "addressCountry": "ZA"
+    },
+    "sameAs": [
+      "https://www.facebook.com/yourprofile",
+      "https://twitter.com/MthembuAvuyile",
+      "https://www.linkedin.com/in/yourprofile"
+    ]
+  }
+  </script>
+</head>
+
   <body>
     <header>
       <div class="logo-container">
@@ -171,14 +169,14 @@
         </p>
         <p><strong>Person in Charge:</strong> Anele Tembe</p>
         <p>
-          <strong>Primary Phone Number:</strong>
+          <strong>Primary Phone Number:</strong><br />
           <a href="tel:+27714283735">071 428 3735</a>
           <a href="https://wa.me/27714283735" target="_blank"
             ><img src="images/WhatsApp-icon.png" alt="WhatsApp" height="16"
           /></a>
         </p>
         <p>
-          <strong>Alternative Phone Number:</strong>
+          <strong>Alternative Phone Number:</strong><br />
           <a href="tel:+27793246605">079 324 6605</a>
           <a href="https://wa.me/27793246605" target="_blank"
             ><img src="images/WhatsApp-icon.png" alt="WhatsApp" height="16"
@@ -190,7 +188,7 @@
         </p>
         <p><strong>Operating Hours:</strong> Monday - Friday: 8 AM - 5 PM</p>
 
-        <form method="POST" action="submit_form.php">
+        <form id="contact-form" method="POST">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
           <label for="email">Email:</label>
@@ -232,6 +230,8 @@
         </div>
       </section>
     </main>
+
+
     <footer>
       <p>&copy; <span id="year"></span> AJ Vehicle Registration Services</p>
       <div class="social-media">
@@ -253,21 +253,40 @@
         >
       </p>
     </footer>
-    <script>
-      const year = new Date().getFullYear();
-      document.getElementById("year").textContent = year;
-    </script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-XXXXXXXXX-X");
-    </script>
-  </body>
+
+
+    <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-XXXXXXXXX-X");
+  </script>
+
+<script type="text/javascript">
+  document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form from submitting the traditional way
+
+    // Get form data
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    // Send the email using EmailJS
+    emailjs.send("service_AJ85TMB", "9uqz9fm", {
+      from_name: name,
+      from_email: email,
+      message: message
+    })
+    .then(function (response) {
+      alert(`SUCCESS! Your message was sent. Status: ${response.status} - ${response.text}`);
+    }, function (error) {
+      alert(`FAILED! There was an error sending your message. Error: ${error.text}`);
+    });
+  });
+</script>
+</body>
 </html>
