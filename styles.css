@@ -159,3 +159,40 @@ footer {
   height: 30px;
   margin: 0 10px;
 }
+/* Common styles for both sections */
+#location, #business-hours {
+  border-left: 1px solid #e74c3c; /* Red border */
+  padding: 10px;
+}
+
+#location h2, #business-hours h2 {
+  color: #333;
+  border-bottom: 1px solid #e74c3c; /* Red underline */
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Location Section */
+#location p {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Business Hours Section */
+#clock {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e74c3c; /* Red color for the clock */
+  margin-bottom: 15px;
+}
+
+#hours-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#hours-list li {
+  font-size: 16px;
+  color: #333;
+  padding: 5px 0;
+}
