@@ -52,12 +52,13 @@ main {
 .image-section {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 .square-image {
-  width: 200px;
-  height: 200px;
+  width: 30%;
+  height: auto;
   object-fit: cover;
   margin: 10px;
   border-radius: 10px;
