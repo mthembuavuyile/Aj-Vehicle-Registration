@@ -8,6 +8,11 @@
   <meta name="keywords" content="vehicle registration, Durban, KZN, ownership change, logbook duplicate, deregistration, roadworthiness, driver's license" />
   <meta name="author" content="AJ Vehicle Registration Services" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -182,11 +187,23 @@
             ><img src="images/WhatsApp-icon.png" alt="WhatsApp" height="16"
           /></a>
         </p>
-        <p>
-          <strong>Address:</strong> 123 Anton Lembede St, Durban, 4001, KZN,
-          South Africa
-        </p>
-        <p><strong>Operating Hours:</strong> Monday - Friday: 8 AM - 5 PM</p>
+        
+        <section id="business-hours">
+          <h2>Business Hours</h2>
+          <div id="clock"></div>
+          <ul id="hours-list">
+            <li>Monday - Friday: 8 AM - 5 PM</li>
+            <li>Saturday - Sunday: Closed</li>
+          </ul>
+        </section>
+
+        <section id="location">
+          <h2>Our Location</h2>
+          <p>
+            <strong>Address:</strong> 123 Anton Lembede St, Durban, 4001, KZN,
+            South Africa
+          </p>
+        </section>
 
         <form id="contact-form" method="POST">
           <label for="name">Name:</label>
@@ -248,45 +265,96 @@
 
       <p>
         By
-        <a href="https://mthembuavuyile.github.io/mywebsite/index.html"
-          >Avuyile Mthembu</a
-        >
-      </p>
+        <a href="https://mthembuavuyile.github.io/mywebsite/index.html">Avuyile Mthembu</a>
+    </p>
     </footer>
-
-
+    
+    <script>
+    // Initialize Google Maps
+    function initMap() {
+        const officeLocation = { lat: -29.8587, lng: 31.0218 }; // Durban coordinates
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: officeLocation,
+        });
+        new google.maps.Marker({
+            position: officeLocation,
+            map: map,
+            title: "AJ Vehicle Registration Services",
+        });
+    }
+    
+    // Update clock every second
+    function updateClock() {
+        const now = new Date();
+        document.getElementById("clock").textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    
+    // Initialize FullCalendar
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay',
+            },
+            defaultView: 'agendaWeek',
+            selectable: true,
+            selectHelper: true,
+            select: function(start, end) {
+                const title = prompt('Appointment details:');
+                if (title) {
+                    $('#calendar').fullCalendar('renderEvent', {
+                        title: title,
+                        start: start,
+                        end: end,
+                    }, true);
+                }
+                $('#calendar').fullCalendar('unselect');
+            },
+            editable: true,
+            eventLimit: true,
+        });
+    });
+    </script>
+    
     <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
-  <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
-      dataLayer.push(arguments);
+        dataLayer.push(arguments);
     }
     gtag("js", new Date());
     gtag("config", "UA-XXXXXXXXX-X");
-  </script>
-
-<script type="text/javascript">
-  document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from submitting the traditional way
-
-    // Get form data
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
-
-    // Send the email using EmailJS
-    emailjs.send("service_AJ85TMB", "9uqz9fm", {
-      from_name: name,
-      from_email: email,
-      message: message
-    })
-    .then(function (response) {
-      alert(`SUCCESS! Your message was sent. Status: ${response.status} - ${response.text}`);
-    }, function (error) {
-      alert(`FAILED! There was an error sending your message. Error: ${error.text}`);
+    </script>
+    
+    <script type="text/javascript">
+    // Handle form submission with EmailJS
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+    
+        // Collect form data
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+    
+        // Send email using EmailJS
+        emailjs.send("service_AJ85TMB", "9uqz9fm", {
+            from_name: name,
+            from_email: email,
+            message: message,
+        })
+        .then(function(response) {
+            alert(`SUCCESS! Your message was sent. Status: ${response.status} - ${response.text}`);
+        })
+        .catch(function(error) {
+            alert(`FAILED! There was an error sending your message. Error: ${error.text}`);
+        });
     });
-  });
-</script>
-</body>
-</html>
+    </script>
+    </body>
+    </html>
+
+    
