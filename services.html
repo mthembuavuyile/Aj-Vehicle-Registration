@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -32,292 +32,195 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0..1&display=swap"
         rel="stylesheet" />
 
-    <!-- FontAwesome for fallback/extra icons if needed, though Material is usually enough -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Compiled Tailwind CSS (Includes custom styles) -->
-    <link rel="stylesheet" href="css/output.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-accent selection:text-white">
+<body>
 
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 glass-header shadow-sm transition-all duration-300" id="header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="bg-brand-accent text-white p-2 rounded-lg group-hover:bg-brand-blue smooth-transition">
-                        <i class="fas fa-car text-xl"></i>
-                    </div>
-                    <span class="text-xl font-bold text-brand-dark tracking-tight">AJ Vehicle Reg</span>
-                </a>
+    <header class="site-header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <span class="logo-text">AJ Vehicle Reg</span>
+            </a>
 
-                <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html"
-                        class="text-sm font-medium text-gray-500 hover:text-brand-blue smooth-transition">Home</a>
-                    <a href="services.html"
-                        class="text-sm font-semibold text-brand-blue border-b-2 border-brand-accent pb-1">Services</a>
-                    <a href="contact.html"
-                        class="text-sm font-medium text-gray-500 hover:text-brand-blue smooth-transition">Contact</a>
-                    <a href="contact.html"
-                        class="bg-brand-accent hover:bg-brand-blue text-white px-6 py-2.5 rounded-lg font-medium text-sm shadow-md hover:shadow-premium smooth-transition">
-                        Get Started
-                    </a>
-                </nav>
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="btn-cta">Get Started</a>
+            </nav>
 
-                <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-gray-600 hover:text-brand-blue focus:outline-none">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
-            </div>
+            <button id="menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
         </div>
 
-        <!-- Mobile Nav Dropdown -->
-        <div id="mobile-menu"
-            class="hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 origin-top">
-            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-                <a href="index.html"
-                    class="block px-4 py-3 text-gray-600 font-medium hover:bg-gray-50 rounded-lg">Home</a>
-                <a href="services.html"
-                    class="block px-4 py-3 text-brand-blue font-semibold bg-brand-light rounded-lg">Services</a>
-                <a href="contact.html"
-                    class="block px-4 py-3 text-gray-600 font-medium hover:bg-gray-50 rounded-lg">Contact</a>
-                <a href="contact.html"
-                    class="block text-center mt-4 bg-brand-accent text-white px-4 py-3 rounded-lg font-semibold shadow-md">Get
-                    Started</a>
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <div class="mobile-menu-inner">
+                <a href="index.html" class="mobile-link">Home</a>
+                <a href="services.html" class="mobile-link active">Services</a>
+                <a href="contact.html" class="mobile-link">Contact</a>
+                <a href="contact.html" class="mobile-cta">Get Started</a>
             </div>
         </div>
     </header>
 
     <main>
         <!-- Services Section -->
-        <section id="services" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl font-extrabold text-brand-dark mb-4 tracking-tight">Our Core Services</h2>
-                    <p class="text-gray-500 text-lg">Comprehensive vehicle registration and licensing services designed
+        <section id="services" class="services-section" style="padding-top: 8rem;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Core Services</h2>
+                    <p>Comprehensive vehicle registration and licensing services designed
                         to make your life easier and ensure complete legal compliance.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-car text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Registration & Deregistration</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Complete vehicle registration processing and
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-car"></i></div>
+                        <h3>Registration & Deregistration</h3>
+                        <p>Complete vehicle registration processing and
                             official deregistration services. We handle all the paperwork.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-id-card text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Car License Renewals</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Expedited annual car license renewal services.
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-id-card"></i></div>
+                        <h3>Car License Renewals</h3>
+                        <p>Expedited annual car license renewal services.
                             Don't let your vehicle's license expire—prevent penalties.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-file-signature text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Ownership & Address Changes</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Secure and verified change of ownership
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-file-signature"></i></div>
+                        <h3>Ownership & Address Changes</h3>
+                        <p>Secure and verified change of ownership
                             transfers and official change of address updates on the eNatis system.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-user-graduate text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Driver Services</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Comprehensive driver assistance including
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3>Driver Services</h3>
+                        <p>Comprehensive driver assistance including
                             application for learner's licenses and renewals of driver's licenses.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-shield-alt text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Police Clearance</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Fast and reliable application for police
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Police Clearance</h3>
+                        <p>Fast and reliable application for police
                             clearance certificates. We facilitate the entire process to save you time.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-clipboard-check text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Roadworthiness (COR/COF)</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Certificate of Roadworthiness (COR) and
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h3>Roadworthiness (COR/COF)</h3>
+                        <p>Certificate of Roadworthiness (COR) and
                             Certificate of Fitness (COF) applications to ensure safety compliance.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-copy text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Logbooks & Double Disks</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Hassle-free processing for a duplicate logbook
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-copy"></i></div>
+                        <h3>Logbooks & Double Disks</h3>
+                        <p>Hassle-free processing for a duplicate logbook
                             or application for double disks when your originals are lost or damaged.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-clock text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Temporary Permits</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Quick application for temporary permits to keep
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Temporary Permits</h3>
+                        <p>Quick application for temporary permits to keep
                             you legally on the road while waiting for final documentation.</p>
                     </div>
 
-                    <div
-                        class="bg-white rounded-2xl p-8 border border-gray-100 shadow-card hover:shadow-card-hover smooth-transition group micro-bounce cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500">
-                        </div>
-                        <div
-                            class="w-14 h-14 bg-brand-light text-brand-accent flex items-center justify-center rounded-xl mb-6 group-hover:bg-brand-accent group-hover:text-white smooth-transition">
-                            <i class="fas fa-globe text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Vehicle Exports</h3>
-                        <p class="text-gray-500 leading-relaxed text-sm">Comprehensive administrative support and
+                    <div class="service-card">
+                        <div class="card-accent"></div>
+                        <div class="card-icon"><i class="fas fa-globe"></i></div>
+                        <h3>Vehicle Exports</h3>
+                        <p>Comprehensive administrative support and
                             documentation processing for smooth and compliant vehicle exports.</p>
                     </div>
-
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark pt-16 pb-8 border-t-4 border-brand-accent">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
-                <div class="flex flex-col gap-4">
-                    <a href="index.html" class="flex items-center gap-2 text-white">
-                        <i class="fas fa-car text-2xl text-brand-accent"></i>
-                        <span class="text-xl font-bold tracking-tight">AJ Vehicle Reg</span>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-car"></i>
+                        <span>AJ Vehicle Reg</span>
                     </a>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p>
                         Your trusted partner for all vehicle registration services in Durban, KZN. Institutional
                         stability and efficiency guaranteed.
                     </p>
                 </div>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-white font-semibold mb-4 text-lg">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html"
-                                class="text-gray-400 hover:text-white text-sm smooth-transition">Home</a>
-                        </li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white text-sm smooth-transition">Our
-                                Services</a></li>
-                        <li><a href="contact.html"
-                                class="text-gray-400 hover:text-white text-sm smooth-transition">Contact
-                                Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white text-sm smooth-transition">Licensing
-                                Guide</a></li>
-                    </ul>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Home</a>
+                        <a href="services.html" class="footer-link">Our Services</a>
+                        <a href="contact.html" class="footer-link">Contact Us</a>
+                        <a href="#" class="footer-link">Licensing Guide</a>
+                    </div>
                 </div>
 
-                <!-- Services Links -->
-                <div>
-                    <h4 class="text-white font-semibold mb-4 text-lg">Top Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white text-sm smooth-transition">Vehicle
-                                Registration</a></li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white text-sm smooth-transition">License
-                                Renewals</a></li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white text-sm smooth-transition">Ownership Transfers</a>
-                        </li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-white text-sm smooth-transition">Police
-                                Clearance</a></li>
-                    </ul>
+                <div class="footer-column">
+                    <h4>Top Services</h4>
+                    <div class="footer-links">
+                        <a href="services.html" class="footer-link">Vehicle Registration</a>
+                        <a href="services.html" class="footer-link">License Renewals</a>
+                        <a href="services.html" class="footer-link">Ownership Transfers</a>
+                        <a href="services.html" class="footer-link">Police Clearance</a>
+                    </div>
                 </div>
 
-                <!-- Connect -->
-                <div>
-                    <h4 class="text-white font-semibold mb-4 text-lg">Connect With Us</h4>
-                    <div class="flex flex-col gap-3">
-                        <a href="https://wa.me/27714283735"
-                            class="text-gray-400 hover:text-[#25D366] text-sm flex items-center gap-2 smooth-transition">
-                            <i class="fab fa-whatsapp text-lg"></i> 071 428 3735
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="footer-connect">
+                        <a href="https://wa.me/27714283735" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> 071 428 3735
                         </a>
-                        <a href="mailto:info@ajvehicleregistration.co.za"
-                            class="text-gray-400 hover:text-white text-sm flex items-center gap-2 smooth-transition">
+                        <a href="mailto:info@ajvehicleregistration.co.za">
                             <i class="fas fa-envelope"></i> info@ajvehicleregistration.co.za
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-xs text-center md:text-left">
-                    &copy; 2024 AJ Vehicle Registration. All rights reserved.
-                </p>
-                <div class="flex gap-6">
-                    <a href="#" class="text-gray-500 hover:text-white text-xs smooth-transition">Terms of Service</a>
-                    <a href="#" class="text-gray-500 hover:text-white text-xs smooth-transition">Privacy Policy</a>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AJ Vehicle Registration. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- External Main JS -->
     <script src="js/main.js"></script>
 </body>
 

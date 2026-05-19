@@ -27,11 +27,9 @@ const header = document.getElementById('header');
 if (header) {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
-            header.classList.add('shadow-md');
-            header.classList.remove('shadow-sm');
+            header.classList.add('scrolled');
         } else {
-            header.classList.add('shadow-sm');
-            header.classList.remove('shadow-md');
+            header.classList.remove('scrolled');
         }
     });
 }
